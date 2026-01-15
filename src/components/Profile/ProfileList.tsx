@@ -5,10 +5,10 @@ interface ProfileListProps {
   profiles: Profile[];
   onEdit: (profile: Profile) => void;
   onDelete: (id: string) => void;
-  onSelect?: (profile: Profile) => void;
+  onGenerateMatch: (profile: Profile) => void;
 }
 
-export function ProfileList({ profiles, onEdit, onDelete, onSelect }: ProfileListProps) {
+export function ProfileList({ profiles, onEdit, onDelete, onGenerateMatch }: ProfileListProps) {
   if (profiles.length === 0) {
     return (
       <div className="text-center py-12">
@@ -25,7 +25,7 @@ export function ProfileList({ profiles, onEdit, onDelete, onSelect }: ProfileLis
           profile={profile}
           onEdit={onEdit}
           onDelete={onDelete}
-          onSelect={onSelect}
+          onGenerateMatch={onGenerateMatch}
         />
       ))}
     </div>

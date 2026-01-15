@@ -8,88 +8,126 @@ export const teams: Team[] = [
   { id: 'chelsea', name: 'Chelsea', category: ['premier-league', 'strong'], type: 'club' },
   { id: 'man-utd', name: 'Manchester United', category: ['premier-league', 'strong'], type: 'club' },
   { id: 'tottenham', name: 'Tottenham Hotspur', category: ['premier-league', 'strong'], type: 'club' },
+  { id: 'newcastle', name: 'Newcastle United', category: ['premier-league', 'strong'], type: 'club' },
+  { id: 'aston-villa', name: 'Aston Villa', category: ['premier-league', 'strong'], type: 'club' },
   
   // Premier League - Average
-  { id: 'newcastle', name: 'Newcastle United', category: ['premier-league', 'average'], type: 'club' },
   { id: 'brighton', name: 'Brighton & Hove Albion', category: ['premier-league', 'average'], type: 'club' },
   { id: 'west-ham', name: 'West Ham United', category: ['premier-league', 'average'], type: 'club' },
-  { id: 'aston-villa', name: 'Aston Villa', category: ['premier-league', 'average'], type: 'club' },
   { id: 'crystal-palace', name: 'Crystal Palace', category: ['premier-league', 'average'], type: 'club' },
   { id: 'fulham', name: 'Fulham', category: ['premier-league', 'average'], type: 'club' },
   { id: 'wolves', name: 'Wolverhampton Wanderers', category: ['premier-league', 'average'], type: 'club' },
   { id: 'everton', name: 'Everton', category: ['premier-league', 'average'], type: 'club' },
+  { id: 'brentford', name: 'Brentford', category: ['premier-league', 'average'], type: 'club' },
+  { id: 'bournemouth', name: 'Bournemouth', category: ['premier-league', 'average'], type: 'club' },
+  { id: 'nottingham', name: 'Nottingham Forest', category: ['premier-league', 'average'], type: 'club' },
   
   // Premier League - Weak
   { id: 'burnley', name: 'Burnley', category: ['premier-league', 'weak'], type: 'club' },
   { id: 'sheffield-utd', name: 'Sheffield United', category: ['premier-league', 'weak'], type: 'club' },
   { id: 'luton', name: 'Luton Town', category: ['premier-league', 'weak'], type: 'club' },
-  { id: 'nottingham', name: 'Nottingham Forest', category: ['premier-league', 'weak'], type: 'club' },
-  { id: 'bournemouth', name: 'Bournemouth', category: ['premier-league', 'weak'], type: 'club' },
+  { id: 'ipswich', name: 'Ipswich Town', category: ['premier-league', 'weak'], type: 'club' },
+  { id: 'leicester', name: 'Leicester City', category: ['premier-league', 'weak'], type: 'club' },
+  { id: 'southampton', name: 'Southampton', category: ['premier-league', 'weak'], type: 'club' },
   
   // La Liga - Strong
   { id: 'real-madrid', name: 'Real Madrid', category: ['la-liga', 'strong'], type: 'club' },
   { id: 'barcelona', name: 'Barcelona', category: ['la-liga', 'strong'], type: 'club' },
   { id: 'atletico-madrid', name: 'Atlético Madrid', category: ['la-liga', 'strong'], type: 'club' },
-  { id: 'sevilla', name: 'Sevilla', category: ['la-liga', 'strong'], type: 'club' },
+  { id: 'girona', name: 'Girona', category: ['la-liga', 'strong'], type: 'club' },
+  { id: 'athletic-bilbao', name: 'Athletic Bilbao', category: ['la-liga', 'strong'], type: 'club' },
+  { id: 'real-sociedad', name: 'Real Sociedad', category: ['la-liga', 'strong'], type: 'club' },
   
   // La Liga - Average
   { id: 'valencia', name: 'Valencia', category: ['la-liga', 'average'], type: 'club' },
-  { id: 'real-sociedad', name: 'Real Sociedad', category: ['la-liga', 'average'], type: 'club' },
   { id: 'villarreal', name: 'Villarreal', category: ['la-liga', 'average'], type: 'club' },
-  { id: 'athletic-bilbao', name: 'Athletic Bilbao', category: ['la-liga', 'average'], type: 'club' },
   { id: 'betis', name: 'Real Betis', category: ['la-liga', 'average'], type: 'club' },
+  { id: 'sevilla', name: 'Sevilla', category: ['la-liga', 'average'], type: 'club' },
+  { id: 'osasuna', name: 'Osasuna', category: ['la-liga', 'average'], type: 'club' },
+  { id: 'getafe', name: 'Getafe', category: ['la-liga', 'average'], type: 'club' },
+  { id: 'las-palmas', name: 'Las Palmas', category: ['la-liga', 'average'], type: 'club' },
+  { id: 'rayo-vallecano', name: 'Rayo Vallecano', category: ['la-liga', 'average'], type: 'club' },
   
   // La Liga - Weak
-  { id: 'getafe', name: 'Getafe', category: ['la-liga', 'weak'], type: 'club' },
-  { id: 'alaves', name: 'Deportivo Alavés', category: ['la-liga', 'weak'], type: 'club' },
+  { id: 'mallorca', name: 'Mallorca', category: ['la-liga', 'weak'], type: 'club' },
+  { id: 'celta-vigo', name: 'Celta Vigo', category: ['la-liga', 'weak'], type: 'club' },
   { id: 'cadiz', name: 'Cádiz', category: ['la-liga', 'weak'], type: 'club' },
+  { id: 'alaves', name: 'Deportivo Alavés', category: ['la-liga', 'weak'], type: 'club' },
+  { id: 'granada', name: 'Granada', category: ['la-liga', 'weak'], type: 'club' },
+  { id: 'almeria', name: 'Almería', category: ['la-liga', 'weak'], type: 'club' },
   
   // Serie A - Strong
   { id: 'inter', name: 'Inter Milan', category: ['serie-a', 'strong'], type: 'club' },
   { id: 'juventus', name: 'Juventus', category: ['serie-a', 'strong'], type: 'club' },
   { id: 'ac-milan', name: 'AC Milan', category: ['serie-a', 'strong'], type: 'club' },
-  { id: 'napoli', name: 'Napoli', category: ['serie-a', 'strong'], type: 'club' },
+  { id: 'atalanta', name: 'Atalanta', category: ['serie-a', 'strong'], type: 'club' },
+  { id: 'bologna', name: 'Bologna', category: ['serie-a', 'strong'], type: 'club' },
   { id: 'roma', name: 'AS Roma', category: ['serie-a', 'strong'], type: 'club' },
   
   // Serie A - Average
-  { id: 'atalanta', name: 'Atalanta', category: ['serie-a', 'average'], type: 'club' },
   { id: 'lazio', name: 'Lazio', category: ['serie-a', 'average'], type: 'club' },
+  { id: 'napoli', name: 'Napoli', category: ['serie-a', 'average'], type: 'club' },
   { id: 'fiorentina', name: 'Fiorentina', category: ['serie-a', 'average'], type: 'club' },
-  { id: 'bologna', name: 'Bologna', category: ['serie-a', 'average'], type: 'club' },
+  { id: 'torino', name: 'Torino', category: ['serie-a', 'average'], type: 'club' },
+  { id: 'genoa', name: 'Genoa', category: ['serie-a', 'average'], type: 'club' },
+  { id: 'monza', name: 'Monza', category: ['serie-a', 'average'], type: 'club' },
+  { id: 'lecce', name: 'Lecce', category: ['serie-a', 'average'], type: 'club' },
+  { id: 'sassuolo', name: 'Sassuolo', category: ['serie-a', 'average'], type: 'club' },
   
   // Serie A - Weak
+  { id: 'udinese', name: 'Udinese', category: ['serie-a', 'weak'], type: 'club' },
+  { id: 'cagliari', name: 'Cagliari', category: ['serie-a', 'weak'], type: 'club' },
+  { id: 'verona', name: 'Hellas Verona', category: ['serie-a', 'weak'], type: 'club' },
   { id: 'empoli', name: 'Empoli', category: ['serie-a', 'weak'], type: 'club' },
+  { id: 'frosinone', name: 'Frosinone', category: ['serie-a', 'weak'], type: 'club' },
   { id: 'salernitana', name: 'Salernitana', category: ['serie-a', 'weak'], type: 'club' },
   
   // Bundesliga - Strong
   { id: 'bayern', name: 'Bayern Munich', category: ['bundesliga', 'strong'], type: 'club' },
+  { id: 'leverkusen', name: 'Bayer Leverkusen', category: ['bundesliga', 'strong'], type: 'club' },
   { id: 'dortmund', name: 'Borussia Dortmund', category: ['bundesliga', 'strong'], type: 'club' },
   { id: 'rb-leipzig', name: 'RB Leipzig', category: ['bundesliga', 'strong'], type: 'club' },
-  { id: 'leverkusen', name: 'Bayer Leverkusen', category: ['bundesliga', 'strong'], type: 'club' },
+  { id: 'stuttgart', name: 'VfB Stuttgart', category: ['bundesliga', 'strong'], type: 'club' },
   
   // Bundesliga - Average
   { id: 'frankfurt', name: 'Eintracht Frankfurt', category: ['bundesliga', 'average'], type: 'club' },
-  { id: 'wolfsburg', name: 'VfL Wolfsburg', category: ['bundesliga', 'average'], type: 'club' },
   { id: 'hoffenheim', name: 'TSG Hoffenheim', category: ['bundesliga', 'average'], type: 'club' },
+  { id: 'wolfsburg', name: 'VfL Wolfsburg', category: ['bundesliga', 'average'], type: 'club' },
+  { id: 'freiburg', name: 'SC Freiburg', category: ['bundesliga', 'average'], type: 'club' },
+  { id: 'augsburg', name: 'FC Augsburg', category: ['bundesliga', 'average'], type: 'club' },
+  { id: 'werder-bremen', name: 'Werder Bremen', category: ['bundesliga', 'average'], type: 'club' },
+  { id: 'heidenheim', name: '1. FC Heidenheim', category: ['bundesliga', 'average'], type: 'club' },
   
   // Bundesliga - Weak
   { id: 'bochum', name: 'VfL Bochum', category: ['bundesliga', 'weak'], type: 'club' },
+  { id: 'mainz', name: '1. FSV Mainz 05', category: ['bundesliga', 'weak'], type: 'club' },
+  { id: 'union-berlin', name: '1. FC Union Berlin', category: ['bundesliga', 'weak'], type: 'club' },
   { id: 'darmstadt', name: 'SV Darmstadt 98', category: ['bundesliga', 'weak'], type: 'club' },
+  { id: 'koln', name: '1. FC Köln', category: ['bundesliga', 'weak'], type: 'club' },
   
   // Ligue 1 - Strong
   { id: 'psg', name: 'Paris Saint-Germain', category: ['ligue-1', 'strong'], type: 'club' },
   { id: 'monaco', name: 'AS Monaco', category: ['ligue-1', 'strong'], type: 'club' },
   { id: 'marseille', name: 'Olympique Marseille', category: ['ligue-1', 'strong'], type: 'club' },
   { id: 'lyon', name: 'Olympique Lyon', category: ['ligue-1', 'strong'], type: 'club' },
+  { id: 'lille', name: 'Lille', category: ['ligue-1', 'strong'], type: 'club' },
   
   // Ligue 1 - Average
-  { id: 'lille', name: 'Lille', category: ['ligue-1', 'average'], type: 'club' },
   { id: 'nice', name: 'OGC Nice', category: ['ligue-1', 'average'], type: 'club' },
   { id: 'rennes', name: 'Stade Rennais', category: ['ligue-1', 'average'], type: 'club' },
+  { id: 'lens', name: 'RC Lens', category: ['ligue-1', 'average'], type: 'club' },
+  { id: 'toulouse', name: 'Toulouse', category: ['ligue-1', 'average'], type: 'club' },
+  { id: 'reims', name: 'Stade de Reims', category: ['ligue-1', 'average'], type: 'club' },
+  { id: 'montpellier', name: 'Montpellier', category: ['ligue-1', 'average'], type: 'club' },
+  { id: 'strasbourg', name: 'Strasbourg', category: ['ligue-1', 'average'], type: 'club' },
   
   // Ligue 1 - Weak
-  { id: 'clermont', name: 'Clermont Foot', category: ['ligue-1', 'weak'], type: 'club' },
+  { id: 'nantes', name: 'FC Nantes', category: ['ligue-1', 'weak'], type: 'club' },
+  { id: 'metz', name: 'FC Metz', category: ['ligue-1', 'weak'], type: 'club' },
   { id: 'lorient', name: 'FC Lorient', category: ['ligue-1', 'weak'], type: 'club' },
+  { id: 'clermont', name: 'Clermont Foot', category: ['ligue-1', 'weak'], type: 'club' },
+  { id: 'le-havre', name: 'Le Havre', category: ['ligue-1', 'weak'], type: 'club' },
+  { id: 'troyes', name: 'Troyes', category: ['ligue-1', 'weak'], type: 'club' },
   
   // National Teams - Strong
   { id: 'brazil', name: 'Brazil', category: ['national', 'strong'], type: 'national' },
@@ -119,7 +157,7 @@ export const teams: Team[] = [
   { id: 'ireland', name: 'Republic of Ireland', category: ['national', 'weak'], type: 'national' },
   { id: 'scotland', name: 'Scotland', category: ['national', 'weak'], type: 'national' },
   
-  // Legendary Teams
+  // Legendary National Teams
   { id: 'legendary-brazil', name: 'Brazil (Legendary)', category: ['legendary'], type: 'legendary' },
   { id: 'legendary-argentina', name: 'Argentina (Legendary)', category: ['legendary'], type: 'legendary' },
   { id: 'legendary-france', name: 'France (Legendary)', category: ['legendary'], type: 'legendary' },
@@ -128,6 +166,24 @@ export const teams: Team[] = [
   { id: 'legendary-netherlands', name: 'Netherlands (Legendary)', category: ['legendary'], type: 'legendary' },
   { id: 'legendary-spain', name: 'Spain (Legendary)', category: ['legendary'], type: 'legendary' },
   { id: 'legendary-england', name: 'England (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-portugal', name: 'Portugal (Legendary)', category: ['legendary'], type: 'legendary' },
+  
+  // Legendary Club Teams
+  { id: 'legendary-real-madrid', name: 'Real Madrid (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-barcelona', name: 'Barcelona (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-man-utd', name: 'Manchester United (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-ac-milan', name: 'AC Milan (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-bayern', name: 'Bayern Munich (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-liverpool', name: 'Liverpool (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-juventus', name: 'Juventus (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-inter', name: 'Inter Milan (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-arsenal', name: 'Arsenal (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-chelsea', name: 'Chelsea (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-atletico', name: 'Atlético Madrid (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-dortmund', name: 'Borussia Dortmund (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-roma', name: 'AS Roma (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-napoli', name: 'Napoli (Legendary)', category: ['legendary'], type: 'legendary' },
+  { id: 'legendary-psg', name: 'Paris Saint-Germain (Legendary)', category: ['legendary'], type: 'legendary' },
 ];
 
 // Category definitions for filtering

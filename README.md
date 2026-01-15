@@ -58,32 +58,32 @@ The built files will be in the `dist` directory.
 
 ## Deployment to GitHub Pages
 
-The application is configured to be deployed to GitHub Pages. Follow these steps:
+The application is configured to be deployed to GitHub Pages with automatic CI/CD.
+
+### Automatic Deployment (CI/CD)
+
+The project includes a GitHub Actions workflow that automatically builds and deploys your application whenever you push to the `main` branch.
 
 1. **Initial Setup** (one-time):
    - Make sure your repository is named `PES` (or update the `base` path in `vite.config.ts`)
    - The `base` path in `vite.config.ts` is set to `/PES/` to match the repository name
-
-2. **Deploy**:
-   ```bash
-   npm run deploy
-   ```
-
-   This will:
-   - Build the application
-   - Deploy it to the `gh-pages` branch
-   - Make it available at `https://<username>.github.io/PES/`
-
-3. **Enable GitHub Pages**:
    - Go to your repository settings on GitHub
    - Navigate to "Pages" in the sidebar
-   - Under "Source", select the `gh-pages` branch
+   - Under "Source", select "GitHub Actions" (not a branch)
    - Save the changes
 
-4. **Access Your App**:
-   - Your app will be available at `https://<username>.github.io/PES/`
+2. **Automatic Deployment**:
+   - Simply push your changes to the `main` branch
+   - The GitHub Actions workflow will automatically:
+     - Build the application
+     - Deploy it to GitHub Pages
+   - You can monitor the deployment progress in the "Actions" tab of your repository
 
-## Manual Deployment (Alternative)
+3. **Access Your App**:
+   - Your app will be available at `https://<username>.github.io/PES/`
+   - The deployment typically takes 1-2 minutes after pushing
+
+### Manual Deployment (Alternative)
 
 If you prefer to deploy manually:
 

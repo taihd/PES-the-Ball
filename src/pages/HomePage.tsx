@@ -1,8 +1,77 @@
+import { useState } from 'react';
+import type { Profile, MatchResult as MatchResultType } from '../types';
 import { useProfiles } from '../hooks/useProfiles';
-import { MatchGenerator } from '../components/Match/MatchGenerator';
+import { ProfileList } from '../components/Profile/ProfileList';
+import { ProfileForm } from '../components/Profile/ProfileForm';
+import { MatchResult } from '../components/Match/MatchResult';
+import { Modal } from '../components/Shared/Modal';
+import { Button } from '../components/Shared/Button';
+import { generateMatch } from '../utils/randomizer';
 
 export function HomePage() {
-  const { profiles, loading } = useProfiles();
+  const { profiles, addProfile, updateProfile, deleteProfile, loading } = useProfiles();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingProfile, setEditingProfile] = useState<Profile | undefined>();
+  const [matchResult, setMatchResult] = useState<MatchResultType | null>(null);
+  const [showMatchResult, setShowMatchResult] = useState(false);
+  const [selectedProfileForMatch, setSelectedProfileForMatch] = useState<Profile | null>(null);
+
+  const handleCreate = () => {
+    setEditingProfile(undefined);
+    setIsModalOpen(true);
+  };
+
+  const handleEdit = (profile: Profile) => {
+    setEditingProfile(profile);
+    setIsModalOpen(true);
+  };
+
+  const handleSave = (profile: Profile) => {
+    if (editingProfile) {
+      updateProfile(profile);
+    } else {
+      addProfile(profile);
+    }
+    setIsModalOpen(false);
+    setEditingProfile(undefined);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+    setEditingProfile(undefined);
+  };
+
+  const handleDelete = (id: string) => {
+    if (confirm('Are you sure you want to delete this profile?')) {
+      deleteProfile(id);
+    }
+  };
+
+  const handleGenerateMatch = (profile: Profile) => {
+    const result = generateMatch(profile);
+    if (!result) {
+      alert('Selected profile has no teams. Please add teams to the profile.');
+      return;
+    }
+    setMatchResult(result);
+    setSelectedProfileForMatch(profile);
+    setShowMatchResult(true);
+  };
+
+  const handleReroll = () => {
+    if (selectedProfileForMatch) {
+      const result = generateMatch(selectedProfileForMatch);
+      if (result) {
+        setMatchResult(result);
+      }
+    }
+  };
+
+  const handleCloseMatchResult = () => {
+    setShowMatchResult(false);
+    setMatchResult(null);
+    setSelectedProfileForMatch(null);
+  };
 
   if (loading) {
     return (
@@ -14,8 +83,43 @@ export function HomePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-gray-900 mb-6">Generate Your Match</h1>
-      <MatchGenerator profiles={profiles} />
+      <div className="flex justify-between items-center mb-6">
+        <Button variant="primary" onClick={handleCreate}>
+          Create New Profile
+        </Button>
+      </div>
+
+      <ProfileList
+        profiles={profiles}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
+        onGenerateMatch={handleGenerateMatch}
+      />
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCancel}
+        title={editingProfile ? 'Edit Profile' : 'Create New Profile'}
+      >
+        <ProfileForm
+          profile={editingProfile}
+          onSave={handleSave}
+          onCancel={handleCancel}
+        />
+      </Modal>
+
+      {showMatchResult && matchResult && (
+        <Modal
+          isOpen={showMatchResult}
+          onClose={handleCloseMatchResult}
+          title="Match Configuration"
+        >
+          <MatchResult 
+            result={matchResult} 
+            onReroll={handleReroll} 
+          />
+        </Modal>
+      )}
     </div>
   );
 }
