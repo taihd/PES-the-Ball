@@ -53,7 +53,7 @@ export function ProfileCard({ profile, onEdit, onDelete, onGenerateMatch }: Prof
             <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-orange-500/20 to-amber-500/20 border border-orange-400/30 text-orange-400 font-bold text-xs shadow-lg shadow-orange-500/20">
               {profile.handicaps.length}
             </span>
-            <span className="font-medium text-gray-300">Handicaps (max {profile.handicapCount})</span>
+            <span className="font-medium text-gray-300">Configs (max {profile.handicapCount})</span>
           </div>
         ) : (
           <div className="flex items-center gap-2 text-gray-500">

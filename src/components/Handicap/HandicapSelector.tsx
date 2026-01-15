@@ -35,13 +35,13 @@ export function HandicapSelector({
     <div className="space-y-4">
       {handicapCount && (
         <div className="text-sm text-gray-300 bg-gradient-to-r from-orange-500/20 to-amber-500/20 p-4 rounded-xl border border-orange-400/30">
-          <span className="font-semibold text-orange-400">{handicapCount}</span> handicap{handicapCount !== 1 ? 's' : ''} will be randomly selected from your pool per match
+          <span className="font-semibold text-orange-400">{handicapCount}</span> config{handicapCount !== 1 ? 's' : ''} will be randomly selected from your pool per match
         </div>
       )}
       
       <div className="flex justify-between items-center">
         <div className="text-sm font-semibold text-gray-300">
-          <span className="text-orange-400">{selectedHandicapIds.length}</span> of <span className="text-white">{handicaps.length}</span> handicaps in pool
+          <span className="text-orange-400">{selectedHandicapIds.length}</span> of <span className="text-white">{handicaps.length}</span> configs in pool
           {handicapCount && (
             <span className="ml-2 text-gray-400 font-normal">
               ({handicapCount} will be randomly selected per match)

@@ -142,14 +142,14 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
             className="h-5 w-5 text-emerald-500 focus:ring-emerald-500 border-slate-600 rounded-lg cursor-pointer transition-all bg-slate-700/50"
           />
           <span className="ml-3 text-sm font-semibold text-gray-300 group-hover:text-emerald-400 transition-colors">
-            Use Handicaps
+            Use Random Config Selection
           </span>
         </label>
         {useHandicaps && (
           <div className="mt-3 space-y-3">
             <div>
               <label htmlFor="handicapCount" className="block text-sm font-semibold text-gray-300 mb-2">
-                Number of Handicaps per Match
+                Number of Configs per Match
               </label>
               <select
                 id="handicapCount"

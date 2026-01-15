@@ -38,7 +38,7 @@ export function MatchResult({ result, onReroll }: MatchResultProps) {
         <div className="relative bg-gradient-to-br from-orange-500/20 to-amber-500/20 rounded-2xl p-6 sm:p-8 border border-orange-400/30 shadow-xl shadow-orange-500/10 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent"></div>
           <div className="relative z-10">
-            <div className="text-xs sm:text-sm text-gray-400 mb-4 font-semibold uppercase tracking-wide">Handicaps</div>
+            <div className="text-xs sm:text-sm text-gray-400 mb-4 font-semibold uppercase tracking-wide">Configs</div>
             <div className="space-y-3">
               {result.handicaps.map(handicap => (
                 <div key={handicap.id} className="inline-block px-4 py-2 bg-slate-800/80 backdrop-blur-sm rounded-xl border border-orange-400/30 shadow-lg">
