@@ -8,7 +8,7 @@
       // Single Page Apps for GitHub Pages
       // Redirect to index.html for client-side routing
       (function() {
-        var segmentCount = 1; // Number of path segments to keep (e.g., /PES = 1)
+        var segmentCount = 1; // Number of path segments to keep (e.g., /PES-the-Ball = 1)
         var l = window.location;
         var pathSegments = l.pathname.split('/').filter(function(segment) {
           return segment.length > 0;
@@ -19,8 +19,8 @@
         if (pathSegments.length >= segmentCount) {
           basePath = '/' + pathSegments.slice(0, segmentCount).join('/');
         } else {
-          // Default to /PES if path is too short
-          basePath = '/PES';
+          // Default to /PES-the-Ball if path is too short
+          basePath = '/PES-the-Ball';
         }
         
         // Redirect to index.html
@@ -35,7 +35,7 @@
   <body>
     <div style="font-family: system-ui, -apple-system, sans-serif; text-align: center; padding: 2rem;">
       <p>Redirecting...</p>
-      <p style="color: #666; font-size: 0.9rem;">If you are not redirected, <a href="/PES/index.html">click here</a>.</p>
+      <p style="color: #666; font-size: 0.9rem;">If you are not redirected, <a href="/PES-the-Ball/index.html">click here</a>.</p>
     </div>
   </body>
 </html>

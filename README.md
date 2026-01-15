@@ -65,8 +65,8 @@ The application is configured to be deployed to GitHub Pages with automatic CI/C
 The project includes a GitHub Actions workflow that automatically builds and deploys your application whenever you push to the `main` branch.
 
 1. **Initial Setup** (one-time):
-   - Make sure your repository is named `PES` (or update the `base` path in `vite.config.ts`)
-   - The `base` path in `vite.config.ts` is set to `/PES/` to match the repository name
+   - Make sure your repository name matches the `base` path in `vite.config.ts`
+   - The `base` path in `vite.config.ts` is set to `/PES-the-Ball/` to match the repository name
    - The project includes a `.nojekyll` file to disable Jekyll processing (required for Vite builds)
    - Go to your repository settings on GitHub
    - Navigate to "Pages" in the sidebar
@@ -81,7 +81,7 @@ The project includes a GitHub Actions workflow that automatically builds and dep
    - You can monitor the deployment progress in the "Actions" tab of your repository
 
 3. **Access Your App**:
-   - Your app will be available at `https://<username>.github.io/PES/`
+   - Your app will be available at `https://<username>.github.io/PES-the-Ball/`
    - The deployment typically takes 1-2 minutes after pushing
 
 ### Troubleshooting
@@ -89,10 +89,11 @@ The project includes a GitHub Actions workflow that automatically builds and dep
 If you see an empty page after deployment:
 
 1. **Verify Repository Name**:
-   - Check that your repository is named exactly `PES`
-   - If it has a different name, update the `base` path in `vite.config.ts` to match your repository name
-   - For example, if your repo is `my-pes-app`, change `base: '/PES/'` to `base: '/my-pes-app/'`
-   - Also update `basename="/PES"` in `src/App.tsx` to match
+   - Check that your repository name matches the `base` path in `vite.config.ts`
+   - The current configuration is set for repository name `PES-the-Ball`
+   - If your repository has a different name, update:
+     - `vite.config.ts`: Change `base: '/PES-the-Ball/'` to match your repository name
+     - `src/App.tsx`: Change `basename="/PES-the-Ball"` to match your repository name
 
 2. **Check GitHub Pages Configuration**:
    - Go to Settings → Pages
@@ -114,7 +115,7 @@ If you see an empty page after deployment:
      - "Failed to load module" - indicates path issues
    - Check the Network tab to see if assets are loading:
      - Look for failed requests (red entries)
-     - Verify asset URLs start with `/PES/assets/`
+     - Verify asset URLs start with `/PES-the-Ball/assets/` (or match your repository name)
      - Check that index.html loads successfully
 
 5. **Verify File Structure**:

@@ -44,9 +44,29 @@ jobs:
           test -f dist/.nojekyll && echo "✓ .nojekyll exists" || echo "✗ .nojekyll missing"
           test -f dist/404.html && echo "✓ 404.html exists" || echo "✗ 404.html missing"
           test -d dist/assets && echo "✓ assets directory exists" || echo "✗ assets directory missing"
+          echo ""
+          echo "Assets directory contents:"
+          ls -la dist/assets/ || echo "✗ assets directory is empty or missing"
+          echo ""
+          echo "Verifying asset files:"
+          find dist/assets -type f -name "*.js" -o -name "*.css" | while read file; do
+            echo "✓ Found: $file"
+          done
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
+      - name: Verify artifact structure
+        run: |
+          echo "=== Final artifact structure ==="
+          find dist -type f | sort
+          echo ""
+          echo "=== Asset files ==="
+          find dist/assets -type f || echo "No assets found!"
+          echo ""
+          echo "=== File sizes ==="
+          du -sh dist/*
+          du -sh dist/assets/* 2>/dev/null || echo "Assets directory empty"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

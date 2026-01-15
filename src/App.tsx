@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter basename="/PES">
+    <BrowserRouter basename="/PES-the-Ball">
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1 bg-transparent">
