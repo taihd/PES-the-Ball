@@ -4,6 +4,8 @@ import { TeamSelector } from '../Team/TeamSelector';
 import { FormationSelector } from '../Formation/FormationSelector';
 import { HandicapSelector } from '../Handicap/HandicapSelector';
 import { Button } from '../Shared/Button';
+import { formations } from '../../data/formations';
+import { handicaps } from '../../data/handicaps';
 
 interface ProfileFormProps {
   profile?: Profile;
@@ -15,20 +17,33 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
   const [name, setName] = useState(profile?.name || '');
   const [teams, setTeams] = useState<string[]>(profile?.teams || []);
   const [useFormations, setUseFormations] = useState(profile?.useFormations ?? false);
-  const [formations, setFormations] = useState<string[]>(profile?.formations || []);
+  const [selectedFormations, setSelectedFormations] = useState<string[]>(
+    profile?.formations || formations.map(f => f.id)
+  );
   const [useHandicaps, setUseHandicaps] = useState(profile?.useHandicaps ?? false);
   const [handicapCount, setHandicapCount] = useState(profile?.handicapCount ?? 1);
-  const [handicaps, setHandicaps] = useState<string[]>(profile?.handicaps || []);
+  const [selectedHandicaps, setSelectedHandicaps] = useState<string[]>(
+    profile?.handicaps || handicaps.map(h => h.id)
+  );
 
   useEffect(() => {
     if (profile) {
       setName(profile.name);
       setTeams(profile.teams);
       setUseFormations(profile.useFormations);
-      setFormations(profile.formations);
+      setSelectedFormations(profile.formations);
       setUseHandicaps(profile.useHandicaps);
       setHandicapCount(profile.handicapCount);
-      setHandicaps(profile.handicaps);
+      setSelectedHandicaps(profile.handicaps);
+    } else {
+      // Reset to defaults when creating new profile
+      setName('');
+      setTeams([]);
+      setUseFormations(false);
+      setSelectedFormations(formations.map(f => f.id));
+      setUseHandicaps(false);
+      setHandicapCount(1);
+      setSelectedHandicaps(handicaps.map(h => h.id));
     }
   }, [profile]);
 
@@ -45,12 +60,12 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
       return;
     }
 
-    if (useFormations && formations.length === 0) {
+    if (useFormations && selectedFormations.length === 0) {
       alert('Please select at least one formation');
       return;
     }
 
-    if (useHandicaps && handicaps.length === 0) {
+    if (useHandicaps && selectedHandicaps.length === 0) {
       alert('Please select at least one handicap');
       return;
     }
@@ -59,8 +74,8 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
       id: profile?.id || `profile-${Date.now()}`,
       name: name.trim(),
       teams,
-      formations: useFormations ? formations : [],
-      handicaps: useHandicaps ? handicaps : [],
+      formations: useFormations ? selectedFormations : [],
+      handicaps: useHandicaps ? selectedHandicaps : [],
       useFormations,
       useHandicaps,
       handicapCount: useHandicaps ? handicapCount : 0,
@@ -111,8 +126,8 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
         {useFormations && (
           <div className="mt-3">
             <FormationSelector
-              selectedFormationIds={formations}
-              onSelectionChange={setFormations}
+              selectedFormationIds={selectedFormations}
+              onSelectionChange={setSelectedFormations}
             />
           </div>
         )}
@@ -147,8 +162,8 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
               </select>
             </div>
             <HandicapSelector
-              selectedHandicapIds={handicaps}
-              onSelectionChange={setHandicaps}
+              selectedHandicapIds={selectedHandicaps}
+              onSelectionChange={setSelectedHandicaps}
               handicapCount={handicapCount}
             />
           </div>
