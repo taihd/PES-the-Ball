@@ -11,7 +11,7 @@ export function TeamSearch({ value, onChange }: TeamSearchProps) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Search teams..."
-        className="w-full px-4 py-3 pl-11 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all bg-white/50 backdrop-blur-sm"
+        className="w-full px-4 py-3 pl-11 border border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all bg-slate-700/50 backdrop-blur-sm text-white placeholder-gray-400"
       />
       <svg
         className="absolute left-3 top-3.5 h-5 w-5 text-gray-400"

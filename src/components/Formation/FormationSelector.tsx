@@ -29,8 +29,8 @@ export function FormationSelector({ selectedFormationIds, onSelectionChange }: F
   return (
     <div className="space-y-4">
       <div className="flex justify-between items-center">
-        <div className="text-sm font-semibold text-gray-700">
-          <span className="text-green-600">{selectedFormationIds.length}</span> of <span className="text-gray-900">{formations.length}</span> formations selected
+        <div className="text-sm font-semibold text-gray-300">
+          <span className="text-green-400">{selectedFormationIds.length}</span> of <span className="text-white">{formations.length}</span> formations selected
         </div>
         <div className="flex gap-2">
           <Button
@@ -52,20 +52,20 @@ export function FormationSelector({ selectedFormationIds, onSelectionChange }: F
         </div>
       </div>
 
-      <div className="border border-gray-200 rounded-xl max-h-64 overflow-y-auto bg-white/50 backdrop-blur-sm shadow-inner">
-        <div className="divide-y divide-gray-100">
+      <div className="border border-slate-600 rounded-xl max-h-64 overflow-y-auto bg-slate-800/50 backdrop-blur-sm shadow-inner">
+        <div className="divide-y divide-slate-700">
           {formations.map(formation => (
             <label
               key={formation.id}
-              className="flex items-center px-4 py-3 hover:bg-green-50/50 cursor-pointer transition-colors group"
+              className="flex items-center px-4 py-3 hover:bg-green-500/10 cursor-pointer transition-colors group"
             >
               <input
                 type="checkbox"
                 checked={selectedFormationIds.includes(formation.id)}
                 onChange={() => handleToggleFormation(formation.id)}
-                className="h-5 w-5 text-green-600 focus:ring-green-500 border-gray-300 rounded-lg cursor-pointer transition-all"
+                className="h-5 w-5 text-green-500 focus:ring-green-500 border-slate-600 rounded-lg cursor-pointer transition-all bg-slate-700/50"
               />
-              <span className="ml-3 text-sm font-medium text-gray-900 group-hover:text-green-600 transition-colors">{formation.name}</span>
+              <span className="ml-3 text-sm font-medium text-gray-300 group-hover:text-green-400 transition-colors">{formation.name}</span>
             </label>
           ))}
         </div>

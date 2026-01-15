@@ -72,7 +72,7 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
-        <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+        <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2">
           Profile Name
         </label>
         <input
@@ -80,14 +80,14 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
           id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all bg-white/50 backdrop-blur-sm"
+          className="w-full px-4 py-3 border border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all bg-slate-700/50 backdrop-blur-sm text-white placeholder-gray-400"
           placeholder="Enter profile name"
           required
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-semibold text-gray-300 mb-2">
           Teams
         </label>
         <TeamSelector
@@ -102,9 +102,9 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
             type="checkbox"
             checked={useFormations}
             onChange={(e) => setUseFormations(e.target.checked)}
-            className="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded-lg cursor-pointer transition-all"
+            className="h-5 w-5 text-emerald-500 focus:ring-emerald-500 border-slate-600 rounded-lg cursor-pointer transition-all bg-slate-700/50"
           />
-          <span className="ml-3 text-sm font-semibold text-gray-700 group-hover:text-indigo-600 transition-colors">
+          <span className="ml-3 text-sm font-semibold text-gray-300 group-hover:text-emerald-400 transition-colors">
             Use Random Formation Selection
           </span>
         </label>
@@ -124,26 +124,26 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
             type="checkbox"
             checked={useHandicaps}
             onChange={(e) => setUseHandicaps(e.target.checked)}
-            className="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded-lg cursor-pointer transition-all"
+            className="h-5 w-5 text-emerald-500 focus:ring-emerald-500 border-slate-600 rounded-lg cursor-pointer transition-all bg-slate-700/50"
           />
-          <span className="ml-3 text-sm font-semibold text-gray-700 group-hover:text-indigo-600 transition-colors">
+          <span className="ml-3 text-sm font-semibold text-gray-300 group-hover:text-emerald-400 transition-colors">
             Use Handicaps
           </span>
         </label>
         {useHandicaps && (
           <div className="mt-3 space-y-3">
             <div>
-              <label htmlFor="handicapCount" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="handicapCount" className="block text-sm font-semibold text-gray-300 mb-2">
                 Number of Handicaps per Match
               </label>
               <select
                 id="handicapCount"
                 value={handicapCount}
                 onChange={(e) => setHandicapCount(Number(e.target.value))}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all bg-white/50 backdrop-blur-sm cursor-pointer"
+                className="w-full px-4 py-3 border border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all bg-slate-700/50 backdrop-blur-sm cursor-pointer text-white"
               >
-                <option value={1}>1</option>
-                <option value={2}>2</option>
+                <option value={1} className="bg-slate-800">1</option>
+                <option value={2} className="bg-slate-800">2</option>
               </select>
             </div>
             <HandicapSelector
@@ -155,7 +155,7 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
         )}
       </div>
 
-      <div className="flex justify-end gap-3 pt-6 border-t border-gray-200/50">
+      <div className="flex justify-end gap-3 pt-6 border-t border-slate-700/50">
         <Button
           type="button"
           variant="secondary"

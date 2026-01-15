@@ -77,8 +77,8 @@ export function HomePage() {
     return (
       <div className="flex justify-center items-center min-h-[400px]">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-12 h-12 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin"></div>
-          <div className="text-gray-500 font-medium">Loading...</div>
+          <div className="w-12 h-12 border-4 border-emerald-500/20 border-t-emerald-400 rounded-full animate-spin shadow-lg shadow-emerald-500/20"></div>
+          <div className="text-gray-400 font-medium">Loading...</div>
         </div>
       </div>
     );

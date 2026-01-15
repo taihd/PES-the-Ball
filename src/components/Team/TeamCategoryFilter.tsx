@@ -17,8 +17,8 @@ export function TeamCategoryFilter({ selectedCategories, onToggleCategory }: Tea
           onClick={() => onToggleCategory(key)}
           className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
             selectedCategories.includes(key)
-              ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white shadow-md shadow-indigo-500/30'
-              : 'bg-white/80 backdrop-blur-sm text-gray-700 hover:bg-gray-50 border border-gray-200 shadow-sm'
+              ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-white shadow-md shadow-emerald-500/30'
+              : 'bg-slate-700/80 backdrop-blur-sm text-gray-300 hover:bg-slate-600/80 border border-slate-600/50 shadow-sm'
           }`}
         >
           {label}

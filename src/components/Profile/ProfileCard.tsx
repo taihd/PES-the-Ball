@@ -10,9 +10,12 @@ interface ProfileCardProps {
 
 export function ProfileCard({ profile, onEdit, onDelete, onGenerateMatch }: ProfileCardProps) {
   return (
-    <div className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-white/50 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 hover:border-indigo-200/50 flex flex-col h-full">
-      <div className="flex justify-between items-start mb-4">
-        <h3 className="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">{profile.name}</h3>
+    <div className="group relative bg-slate-800/60 backdrop-blur-md rounded-2xl shadow-2xl p-6 border border-emerald-500/20 hover:border-emerald-500/40 hover:shadow-emerald-500/20 hover:scale-[1.02] transition-all duration-300 flex flex-col h-full overflow-hidden">
+      {/* Glow effect on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-cyan-500/0 to-emerald-500/0 group-hover:from-emerald-500/5 group-hover:via-cyan-500/5 group-hover:to-emerald-500/5 transition-all duration-300 rounded-2xl"></div>
+      
+      <div className="flex justify-between items-start mb-4 relative z-10">
+        <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">{profile.name}</h3>
         <Button
           variant="danger"
           size="sm"
@@ -24,48 +27,44 @@ export function ProfileCard({ profile, onEdit, onDelete, onGenerateMatch }: Prof
         </Button>
       </div>
       
-      <div className="space-y-3 text-sm mb-6 flex-1">
-        <div className="flex items-center gap-2 text-gray-700">
-          <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 font-semibold text-xs">
+      <div className="space-y-3 text-sm mb-6 flex-1 relative z-10">
+        <div className="flex items-center gap-2 text-gray-300">
+          <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-emerald-400/30 text-emerald-400 font-bold text-xs shadow-lg shadow-emerald-500/20">
             {profile.teams.length}
           </span>
-          <span className="font-medium">Teams</span>
+          <span className="font-medium text-gray-300">Teams</span>
         </div>
         {profile.useFormations ? (
-          <div className="flex items-center gap-2 text-gray-700">
-            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-green-100 text-green-600 font-semibold text-xs">
+          <div className="flex items-center gap-2 text-gray-300">
+            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-400/30 text-green-400 font-bold text-xs shadow-lg shadow-green-500/20">
               {profile.formations.length}
             </span>
-            <span className="font-medium">Formations</span>
+            <span className="font-medium text-gray-300">Formations</span>
           </div>
         ) : (
-          <div className="flex items-center gap-2 text-gray-400">
-            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100 text-gray-400 font-semibold text-xs">
+          <div className="flex items-center gap-2 text-gray-500">
+            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-700/50 border border-slate-600/50 text-gray-500 font-semibold text-xs">
               —
             </span>
-            {/* <span className="font-medium">Formations</span> */}
-            {/* <span className="text-xs text-gray-400 ml-1">(not configured)</span> */}
           </div>
         )}
         {profile.useHandicaps ? (
-          <div className="flex items-center gap-2 text-gray-700">
-            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-orange-100 text-orange-600 font-semibold text-xs">
+          <div className="flex items-center gap-2 text-gray-300">
+            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-orange-500/20 to-amber-500/20 border border-orange-400/30 text-orange-400 font-bold text-xs shadow-lg shadow-orange-500/20">
               {profile.handicaps.length}
             </span>
-            <span className="font-medium">Handicaps (max {profile.handicapCount})</span>
+            <span className="font-medium text-gray-300">Handicaps (max {profile.handicapCount})</span>
           </div>
         ) : (
-          <div className="flex items-center gap-2 text-gray-400">
-            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gray-100 text-gray-400 font-semibold text-xs">
+          <div className="flex items-center gap-2 text-gray-500">
+            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-700/50 border border-slate-600/50 text-gray-500 font-semibold text-xs">
               —
             </span>
-            {/* <span className="font-medium">Handicaps</span>
-            <span className="text-xs text-gray-400 ml-1">(not configured)</span> */}
           </div>
         )}
       </div>
       
-      <div className="flex gap-3 mt-auto">
+      <div className="flex gap-3 mt-auto relative z-10">
         <Button
           variant="secondary"
           size="sm"

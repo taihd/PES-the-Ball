@@ -14,12 +14,12 @@ export function Button({
   type = 'button',
   ...props 
 }: ButtonProps) {
-  const baseClasses = 'font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 shadow-md hover:shadow-lg';
+  const baseClasses = 'font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 shadow-lg hover:shadow-xl';
   
   const variantClasses = {
-    primary: 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white hover:from-indigo-700 hover:to-blue-700 focus:ring-indigo-500 shadow-indigo-500/50',
-    secondary: 'bg-white text-gray-700 hover:bg-gray-50 focus:ring-gray-500 border border-gray-200 shadow-gray-200/50',
-    danger: 'bg-gradient-to-r from-red-500 to-rose-600 text-white hover:from-red-600 hover:to-rose-700 focus:ring-red-500 shadow-red-500/50',
+    primary: 'bg-gradient-to-r from-emerald-500 via-cyan-500 to-emerald-500 text-white hover:from-emerald-400 hover:via-cyan-400 hover:to-emerald-400 focus:ring-emerald-400 shadow-emerald-500/50 hover:shadow-emerald-400/60',
+    secondary: 'bg-slate-700/80 backdrop-blur-sm text-gray-200 hover:bg-slate-600/80 focus:ring-slate-500 border border-slate-600/50 shadow-slate-900/50',
+    danger: 'bg-gradient-to-r from-red-500 to-rose-600 text-white hover:from-red-400 hover:to-rose-500 focus:ring-red-400 shadow-red-500/50 hover:shadow-red-400/60',
   };
   
   const sizeClasses = {

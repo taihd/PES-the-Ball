@@ -36,7 +36,7 @@ export function MatchGenerator({ profiles }: MatchGeneratorProps) {
   if (profiles.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-gray-500 text-lg mb-4">
+        <p className="text-gray-400 text-lg mb-4">
           No profiles available. Create a profile first to generate matches.
         </p>
       </div>
@@ -45,12 +45,12 @@ export function MatchGenerator({ profiles }: MatchGeneratorProps) {
 
   return (
     <div className="space-y-6">
-      <div className="bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Generate Match</h2>
+      <div className="bg-slate-800/60 backdrop-blur-sm rounded-lg shadow-md p-6 border border-emerald-500/20">
+        <h2 className="text-xl font-semibold text-white mb-4">Generate Match</h2>
         
         <div className="space-y-4">
           <div>
-            <label htmlFor="profile-select" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="profile-select" className="block text-sm font-semibold text-gray-300 mb-2">
               Select Profile
             </label>
             <select
@@ -60,11 +60,11 @@ export function MatchGenerator({ profiles }: MatchGeneratorProps) {
                 setSelectedProfileId(e.target.value);
                 setMatchResult(null);
               }}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all bg-slate-700/50 backdrop-blur-sm cursor-pointer text-white"
             >
-              <option value="">Choose a profile...</option>
+              <option value="" className="bg-slate-800">Choose a profile...</option>
               {profiles.map(profile => (
-                <option key={profile.id} value={profile.id}>
+                <option key={profile.id} value={profile.id} className="bg-slate-800">
                   {profile.name}
                 </option>
               ))}
