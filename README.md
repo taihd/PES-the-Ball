@@ -67,6 +67,7 @@ The project includes a GitHub Actions workflow that automatically builds and dep
 1. **Initial Setup** (one-time):
    - Make sure your repository is named `PES` (or update the `base` path in `vite.config.ts`)
    - The `base` path in `vite.config.ts` is set to `/PES/` to match the repository name
+   - The project includes a `.nojekyll` file to disable Jekyll processing (required for Vite builds)
    - Go to your repository settings on GitHub
    - Navigate to "Pages" in the sidebar
    - Under "Source", select "GitHub Actions" (not a branch)
@@ -101,15 +102,37 @@ If you see an empty page after deployment:
 3. **Verify Deployment**:
    - Check the "Actions" tab to ensure the workflow completed successfully
    - Look for any errors in the build logs
+   - Check the "Verify build output" step - it should show all required files (index.html, .nojekyll, 404.html, assets/)
+   - The workflow should show "Deploy to GitHub Pages" completed successfully
 
 4. **Check Browser Console**:
    - Open the browser developer tools (F12)
    - Check the Console tab for JavaScript errors
-   - Check the Network tab to see if assets are loading (look for 404 errors)
+   - Common errors to look for:
+     - 404 errors for assets (JS/CSS files) - indicates base path mismatch
+     - CORS errors - indicates configuration issue
+     - "Failed to load module" - indicates path issues
+   - Check the Network tab to see if assets are loading:
+     - Look for failed requests (red entries)
+     - Verify asset URLs start with `/PES/assets/`
+     - Check that index.html loads successfully
 
-5. **Clear Browser Cache**:
+5. **Verify File Structure**:
+   - After deployment, check that these files exist at the root:
+     - `index.html`
+     - `.nojekyll` (this file prevents Jekyll processing)
+     - `404.html` (for client-side routing)
+     - `assets/` directory with JS and CSS files
+
+6. **Clear Browser Cache**:
    - Try a hard refresh (Ctrl+Shift+R or Cmd+Shift+R)
    - Or open in an incognito/private window
+   - Clear site data from browser settings if needed
+
+7. **Check Repository Settings**:
+   - Ensure the repository is public (or you have GitHub Pro/Team for private repos with Pages)
+   - Verify GitHub Pages is enabled in Settings → Pages
+   - Check that the deployment environment "github-pages" exists and is active
 
 ### Manual Deployment (Alternative)
 

@@ -34,6 +34,17 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Verify build output
+        run: |
+          echo "Build output contents:"
+          ls -la dist/
+          echo ""
+          echo "Checking for required files:"
+          test -f dist/index.html && echo "✓ index.html exists" || echo "✗ index.html missing"
+          test -f dist/.nojekyll && echo "✓ .nojekyll exists" || echo "✗ .nojekyll missing"
+          test -f dist/404.html && echo "✓ 404.html exists" || echo "✗ 404.html missing"
+          test -d dist/assets && echo "✓ assets directory exists" || echo "✗ assets directory missing"
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
