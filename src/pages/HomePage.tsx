@@ -76,16 +76,19 @@ export function HomePage() {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-[400px]">
-        <div className="text-gray-500">Loading...</div>
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-12 h-12 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin"></div>
+          <div className="text-gray-500 font-medium">Loading...</div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mb-6">
-        <Button variant="primary" onClick={handleCreate}>
-          Create New Profile
+    <div className="container mx-auto px-4 py-8 max-w-7xl">
+      <div className="flex justify-between items-center mb-8">
+        <Button variant="primary" onClick={handleCreate} className="shadow-lg">
+          + Create New Profile
         </Button>
       </div>
 

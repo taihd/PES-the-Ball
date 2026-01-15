@@ -83,6 +83,34 @@ The project includes a GitHub Actions workflow that automatically builds and dep
    - Your app will be available at `https://<username>.github.io/PES/`
    - The deployment typically takes 1-2 minutes after pushing
 
+### Troubleshooting
+
+If you see an empty page after deployment:
+
+1. **Verify Repository Name**:
+   - Check that your repository is named exactly `PES`
+   - If it has a different name, update the `base` path in `vite.config.ts` to match your repository name
+   - For example, if your repo is `my-pes-app`, change `base: '/PES/'` to `base: '/my-pes-app/'`
+   - Also update `basename="/PES"` in `src/App.tsx` to match
+
+2. **Check GitHub Pages Configuration**:
+   - Go to Settings → Pages
+   - Ensure "Source" is set to "GitHub Actions" (not a branch)
+   - Wait a few minutes after the first deployment
+
+3. **Verify Deployment**:
+   - Check the "Actions" tab to ensure the workflow completed successfully
+   - Look for any errors in the build logs
+
+4. **Check Browser Console**:
+   - Open the browser developer tools (F12)
+   - Check the Console tab for JavaScript errors
+   - Check the Network tab to see if assets are loading (look for 404 errors)
+
+5. **Clear Browser Cache**:
+   - Try a hard refresh (Ctrl+Shift+R or Cmd+Shift+R)
+   - Or open in an incognito/private window
+
 ### Manual Deployment (Alternative)
 
 If you prefer to deploy manually:

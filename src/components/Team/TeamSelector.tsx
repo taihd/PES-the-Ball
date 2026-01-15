@@ -74,10 +74,10 @@ export function TeamSelector({ selectedTeamIds, onSelectionChange }: TeamSelecto
       />
 
       <div className="flex justify-between items-center">
-        <div className="text-sm text-gray-600">
-          {selectedTeamIds.length} of {teams.length} teams selected
+        <div className="text-sm font-semibold text-gray-700">
+          <span className="text-indigo-600">{selectedTeamIds.length}</span> of <span className="text-gray-900">{teams.length}</span> teams selected
           {filteredTeams.length !== teams.length && (
-            <span className="ml-2">
+            <span className="ml-2 text-gray-500 font-normal">
               ({filteredTeams.length} filtered)
             </span>
           )}
@@ -102,29 +102,30 @@ export function TeamSelector({ selectedTeamIds, onSelectionChange }: TeamSelecto
         </div>
       </div>
 
-      <div className="border border-gray-200 rounded-lg max-h-96 overflow-y-auto">
-        <div className="divide-y divide-gray-200">
+      <div className="border border-gray-200 rounded-xl max-h-96 overflow-y-auto bg-white/50 backdrop-blur-sm shadow-inner">
+        <div className="divide-y divide-gray-100">
           {filteredTeams.map(team => (
             <label
               key={team.id}
-              className="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer"
+              className="flex items-center px-4 py-3 hover:bg-indigo-50/50 cursor-pointer transition-colors group"
             >
               <input
                 type="checkbox"
                 checked={selectedTeamIds.includes(team.id)}
                 onChange={() => handleToggleTeam(team.id)}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded-lg cursor-pointer transition-all"
               />
-              <span className="ml-3 text-sm text-gray-900">{team.name}</span>
-              <span className="ml-auto text-xs text-gray-500">
+              <span className="ml-3 text-sm font-medium text-gray-900 group-hover:text-indigo-600 transition-colors">{team.name}</span>
+              <span className="ml-auto text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
                 {teamCategories[team.category[0] as keyof typeof teamCategories] || team.type}
               </span>
             </label>
           ))}
         </div>
         {filteredTeams.length === 0 && (
-          <div className="px-4 py-8 text-center text-gray-500">
-            No teams found matching your filters.
+          <div className="px-4 py-12 text-center">
+            <div className="text-gray-400 mb-2">🔍</div>
+            <div className="text-gray-500 font-medium">No teams found matching your filters.</div>
           </div>
         )}
       </div>

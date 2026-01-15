@@ -15,10 +15,10 @@ export function TeamCategoryFilter({ selectedCategories, onToggleCategory }: Tea
           key={key}
           type="button"
           onClick={() => onToggleCategory(key)}
-          className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+          className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
             selectedCategories.includes(key)
-              ? 'bg-blue-600 text-white'
-              : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white shadow-md shadow-indigo-500/30'
+              : 'bg-white/80 backdrop-blur-sm text-gray-700 hover:bg-gray-50 border border-gray-200 shadow-sm'
           }`}
         >
           {label}

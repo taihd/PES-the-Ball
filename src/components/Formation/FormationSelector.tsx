@@ -1,4 +1,5 @@
 import { formations } from '../../data/formations';
+import { Button } from '../Shared/Button';
 
 interface FormationSelectorProps {
   selectedFormationIds: string[];
@@ -28,43 +29,43 @@ export function FormationSelector({ selectedFormationIds, onSelectionChange }: F
   return (
     <div className="space-y-4">
       <div className="flex justify-between items-center">
-        <div className="text-sm text-gray-600">
-          {selectedFormationIds.length} of {formations.length} formations selected
+        <div className="text-sm font-semibold text-gray-700">
+          <span className="text-green-600">{selectedFormationIds.length}</span> of <span className="text-gray-900">{formations.length}</span> formations selected
         </div>
         <div className="flex gap-2">
-          <button
-            type="button"
+          <Button
+            variant="secondary"
+            size="sm"
             onClick={handleSelectAll}
             disabled={allSelected}
-            className="px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Select All
-          </button>
-          <button
-            type="button"
+          </Button>
+          <Button
+            variant="secondary"
+            size="sm"
             onClick={handleDeselectAll}
             disabled={selectedFormationIds.length === 0}
-            className="px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Deselect All
-          </button>
+          </Button>
         </div>
       </div>
 
-      <div className="border border-gray-200 rounded-lg max-h-64 overflow-y-auto">
-        <div className="divide-y divide-gray-200">
+      <div className="border border-gray-200 rounded-xl max-h-64 overflow-y-auto bg-white/50 backdrop-blur-sm shadow-inner">
+        <div className="divide-y divide-gray-100">
           {formations.map(formation => (
             <label
               key={formation.id}
-              className="flex items-center px-4 py-3 hover:bg-gray-50 cursor-pointer"
+              className="flex items-center px-4 py-3 hover:bg-green-50/50 cursor-pointer transition-colors group"
             >
               <input
                 type="checkbox"
                 checked={selectedFormationIds.includes(formation.id)}
                 onChange={() => handleToggleFormation(formation.id)}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="h-5 w-5 text-green-600 focus:ring-green-500 border-gray-300 rounded-lg cursor-pointer transition-all"
               />
-              <span className="ml-3 text-sm text-gray-900">{formation.name}</span>
+              <span className="ml-3 text-sm font-medium text-gray-900 group-hover:text-green-600 transition-colors">{formation.name}</span>
             </label>
           ))}
         </div>
