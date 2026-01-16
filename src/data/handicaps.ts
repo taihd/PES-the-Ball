@@ -3,14 +3,18 @@ import type { Handicap } from '../types';
 export const handicaps: Handicap[] = [
   {
     id: 'no-left-footed',
-    name: 'No Left-Footed Players',
-    description: 'Not allowed to use left-footed players in the starting lineup',
+    name: 'Không dùng cầu thủ thuận chân trái',
+    // description: 'Not allowed to use left-footed players in the starting lineup',
+    description: '',
   },
-  { id: 'no-substitutions', name: 'No Substitutions', description: 'Not allowed to make any substitutions during the match' },
+  { id: 'no-substitutions', name: 'Không được thay người', // description: 'Not allowed to make any substitutions during the match'
+    description: '',
+  },
   {
     id: 'no-sprint-attacking',
-    name: 'No Sprint When Attacking',
-    description: 'Not allowed to use sprint button when in possession of the ball',
+    name: 'Khi có bóng không được bấm chạy',
+    // description: 'Not allowed to use sprint button when in possession of the ball',
+    description: '',
   },
   // {
   //   id: 'no-sprint-defending',
@@ -24,18 +28,21 @@ export const handicaps: Handicap[] = [
   // },
   {
     id: 'no-through-balls',
-    name: 'No Through Balls',
-    description: 'Not allowed to use through ball passes',
+    name: 'Không chọc khe',
+    // description: 'Not allowed to use through ball passes',
+    description: '',
   },
   {
     id: 'no-crosses',
-    name: 'No Crosses',
-    description: 'Not allowed to cross the ball into the box',
+    name: 'Không chơi tạt',
+    // description: 'Not allowed to cross the ball into the box',
+    description: '',
   },
   {
     id: 'no-shooting-outside-box',
-    name: 'No Shots Outside Box',
-    description: 'Not allowed to shoot from outside the penalty area',
+    name: 'Chỉ được sút trong vòng cấm',
+    // description: 'Not allowed to shoot from outside the penalty area',
+    description: '',
   },
   // {
   //   id: 'first-touch-only',

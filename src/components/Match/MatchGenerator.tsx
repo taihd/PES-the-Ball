@@ -16,13 +16,13 @@ export function MatchGenerator({ profiles }: MatchGeneratorProps) {
 
   const handleGenerate = () => {
     if (!selectedProfile) {
-      alert('Please select a profile first');
+      alert('Vui lòng chọn người chơi');
       return;
     }
 
     const result = generateMatch(selectedProfile);
     if (!result) {
-      alert('Selected profile has no teams. Please add teams to the profile.');
+      alert('Người chơi đã chọn không có đội bóng nào. Vui lòng thêm đội bóng.');
       return;
     }
 
@@ -37,7 +37,7 @@ export function MatchGenerator({ profiles }: MatchGeneratorProps) {
     return (
       <div className="text-center py-12">
         <p className="text-gray-400 text-lg mb-4">
-          No profiles available. Create a profile first to generate matches.
+          Tạo người chơi để bắt đầu.
         </p>
       </div>
     );
@@ -46,12 +46,12 @@ export function MatchGenerator({ profiles }: MatchGeneratorProps) {
   return (
     <div className="space-y-6">
       <div className="bg-slate-800/60 backdrop-blur-sm rounded-lg shadow-md p-6 border border-emerald-500/20">
-        <h2 className="text-xl font-semibold text-white mb-4">Generate Match</h2>
+        <h2 className="text-xl font-semibold text-white mb-4">Quay ngẫu nhiên</h2>
         
         <div className="space-y-4">
           <div>
             <label htmlFor="profile-select" className="block text-sm font-semibold text-gray-300 mb-2">
-              Select Profile
+              Chọn Người Chơi
             </label>
             <select
               id="profile-select"
@@ -62,7 +62,7 @@ export function MatchGenerator({ profiles }: MatchGeneratorProps) {
               }}
               className="w-full px-4 py-2 border border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all bg-slate-700/50 backdrop-blur-sm cursor-pointer text-white"
             >
-              <option value="" className="bg-slate-800">Choose a profile...</option>
+              <option value="" className="bg-slate-800">Chọn một người chơi...</option>
               {profiles.map(profile => (
                 <option key={profile.id} value={profile.id} className="bg-slate-800">
                   {profile.name}
@@ -78,7 +78,7 @@ export function MatchGenerator({ profiles }: MatchGeneratorProps) {
             disabled={!selectedProfileId}
             className="w-full"
           >
-            Generate Match
+            Quay ngẫu nhiên
           </Button>
         </div>
       </div>

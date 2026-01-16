@@ -75,10 +75,10 @@ export function TeamSelector({ selectedTeamIds, onSelectionChange }: TeamSelecto
 
       <div className="flex justify-between items-center">
         <div className="text-sm font-semibold text-gray-300">
-          <span className="text-emerald-400">{selectedTeamIds.length}</span> of <span className="text-white">{teams.length}</span> teams selected
+          <span className="text-emerald-400">{selectedTeamIds.length}</span> trong <span className="text-white">{teams.length}</span> đội bóng đã chọn
           {filteredTeams.length !== teams.length && (
             <span className="ml-2 text-gray-400 font-normal">
-              ({filteredTeams.length} filtered)
+              ({filteredTeams.length} đã lọc)
             </span>
           )}
         </div>
@@ -89,7 +89,7 @@ export function TeamSelector({ selectedTeamIds, onSelectionChange }: TeamSelecto
             onClick={handleSelectAll}
             disabled={allFilteredSelected}
           >
-            Select All Filtered
+            Chọn Tất Cả
           </Button>
           <Button
             variant="secondary"
@@ -97,7 +97,7 @@ export function TeamSelector({ selectedTeamIds, onSelectionChange }: TeamSelecto
             onClick={handleDeselectAll}
             disabled={filteredTeams.length === 0 || !allFilteredSelected}
           >
-            Deselect All Filtered
+            Bỏ Chọn Tất Cả
           </Button>
         </div>
       </div>
@@ -125,7 +125,7 @@ export function TeamSelector({ selectedTeamIds, onSelectionChange }: TeamSelecto
         {filteredTeams.length === 0 && (
           <div className="px-4 py-12 text-center">
             <div className="text-gray-500 mb-2">🔍</div>
-            <div className="text-gray-400 font-medium">No teams found matching your filters.</div>
+            <div className="text-gray-400 font-medium">Không tìm thấy đội nào phù hợp.</div>
           </div>
         )}
       </div>

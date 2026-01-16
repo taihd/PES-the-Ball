@@ -23,7 +23,7 @@ export function ProfileCard({ profile, onEdit, onDelete, onGenerateMatch }: Prof
           className="opacity-70 hover:opacity-100 transition-opacity"
           aria-label={`Delete ${profile.name}`}
         >
-          Delete
+          Xóa
         </Button>
       </div>
       
@@ -32,14 +32,14 @@ export function ProfileCard({ profile, onEdit, onDelete, onGenerateMatch }: Prof
           <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-emerald-400/30 text-emerald-400 font-bold text-xs shadow-lg shadow-emerald-500/20">
             {profile.teams.length}
           </span>
-          <span className="font-medium text-gray-300">Teams</span>
+          <span className="font-medium text-gray-300">Đội Bóng</span>
         </div>
         {profile.useFormations ? (
           <div className="flex items-center gap-2 text-gray-300">
             <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-400/30 text-green-400 font-bold text-xs shadow-lg shadow-green-500/20">
               {profile.formations.length}
             </span>
-            <span className="font-medium text-gray-300">Formations</span>
+            <span className="font-medium text-gray-300">Đội Hình</span>
           </div>
         ) : (
           <div className="flex items-center gap-2 text-gray-500">
@@ -53,7 +53,7 @@ export function ProfileCard({ profile, onEdit, onDelete, onGenerateMatch }: Prof
             <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-orange-500/20 to-amber-500/20 border border-orange-400/30 text-orange-400 font-bold text-xs shadow-lg shadow-orange-500/20">
               {profile.handicaps.length}
             </span>
-            <span className="font-medium text-gray-300">Configs (max {profile.handicapCount})</span>
+            <span className="font-medium text-gray-300">Yêu Cầu (tối đa {profile.handicapCount})</span>
           </div>
         ) : (
           <div className="flex items-center gap-2 text-gray-500">
@@ -71,7 +71,7 @@ export function ProfileCard({ profile, onEdit, onDelete, onGenerateMatch }: Prof
           className="flex-1"
           onClick={() => onEdit(profile)}
         >
-          Edit
+          Chỉnh Sửa
         </Button>
         <Button
           variant="primary"
@@ -79,7 +79,7 @@ export function ProfileCard({ profile, onEdit, onDelete, onGenerateMatch }: Prof
           className="flex-1"
           onClick={() => onGenerateMatch(profile)}
         >
-          Generate Match
+          Quay Ngẫu Nhiên
         </Button>
       </div>
     </div>

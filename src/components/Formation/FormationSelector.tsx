@@ -30,7 +30,7 @@ export function FormationSelector({ selectedFormationIds, onSelectionChange }: F
     <div className="space-y-4">
       <div className="flex justify-between items-center">
         <div className="text-sm font-semibold text-gray-300">
-          <span className="text-green-400">{selectedFormationIds.length}</span> of <span className="text-white">{formations.length}</span> formations selected
+          <span className="text-green-400">{selectedFormationIds.length}</span> trong <span className="text-white">{formations.length}</span> đội hình đã chọn
         </div>
         <div className="flex gap-2">
           <Button
@@ -39,7 +39,7 @@ export function FormationSelector({ selectedFormationIds, onSelectionChange }: F
             onClick={handleSelectAll}
             disabled={allSelected}
           >
-            Select All
+            Chọn Tất Cả
           </Button>
           <Button
             variant="secondary"
@@ -47,7 +47,7 @@ export function FormationSelector({ selectedFormationIds, onSelectionChange }: F
             onClick={handleDeselectAll}
             disabled={selectedFormationIds.length === 0}
           >
-            Deselect All
+            Bỏ Chọn Tất Cả
           </Button>
         </div>
       </div>

@@ -35,16 +35,16 @@ export function HandicapSelector({
     <div className="space-y-4">
       {handicapCount && (
         <div className="text-sm text-gray-300 bg-gradient-to-r from-orange-500/20 to-amber-500/20 p-4 rounded-xl border border-orange-400/30">
-          <span className="font-semibold text-orange-400">{handicapCount}</span> config{handicapCount !== 1 ? 's' : ''} will be randomly selected from your pool per match
+          <span className="font-semibold text-orange-400">{handicapCount}</span> yêu cầu sẽ được chọn ngẫu nhiên
         </div>
       )}
       
       <div className="flex justify-between items-center">
         <div className="text-sm font-semibold text-gray-300">
-          <span className="text-orange-400">{selectedHandicapIds.length}</span> of <span className="text-white">{handicaps.length}</span> configs in pool
+          <span className="text-orange-400">{selectedHandicapIds.length}</span> trong <span className="text-white">{handicaps.length}</span> yêu cầu trong danh sách
           {handicapCount && (
             <span className="ml-2 text-gray-400 font-normal">
-              ({handicapCount} will be randomly selected per match)
+              ({handicapCount} sẽ được chọn ngẫu nhiên)
             </span>
           )}
         </div>
@@ -55,7 +55,7 @@ export function HandicapSelector({
             onClick={handleSelectAll}
             disabled={allSelected}
           >
-            Select All
+            Chọn Tất Cả
           </Button>
           <Button
             variant="secondary"
@@ -63,7 +63,7 @@ export function HandicapSelector({
             onClick={handleDeselectAll}
             disabled={selectedHandicapIds.length === 0}
           >
-            Deselect All
+            Bỏ Chọn Tất Cả
           </Button>
         </div>
       </div>

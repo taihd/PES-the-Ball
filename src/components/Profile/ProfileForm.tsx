@@ -51,22 +51,22 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
     e.preventDefault();
     
     if (!name.trim()) {
-      alert('Please enter a profile name');
+      alert('Vui lòng nhập tên người chơi');
       return;
     }
 
     if (teams.length === 0) {
-      alert('Please select at least one team');
+      alert('Vui lòng chọn ít nhất một đội bóng');
       return;
     }
 
     if (useFormations && selectedFormations.length === 0) {
-      alert('Please select at least one formation');
+      alert('Vui lòng chọn ít nhất một đội hình');
       return;
     }
 
     if (useHandicaps && selectedHandicaps.length === 0) {
-      alert('Please select at least one handicap');
+      alert('Vui lòng chọn ít nhất một yêu cầu');
       return;
     }
 
@@ -88,7 +88,7 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
         <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2">
-          Profile Name
+          Tên Người Chơi
         </label>
         <input
           type="text"
@@ -96,14 +96,14 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="w-full px-4 py-3 border border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all bg-slate-700/50 backdrop-blur-sm text-white placeholder-gray-400"
-          placeholder="Enter profile name"
+          placeholder="Nhập tên người chơi"
           required
         />
       </div>
 
       <div>
         <label className="block text-sm font-semibold text-gray-300 mb-2">
-          Teams
+          Đội Bóng
         </label>
         <TeamSelector
           selectedTeamIds={teams}
@@ -120,7 +120,7 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
             className="h-5 w-5 text-emerald-500 focus:ring-emerald-500 border-slate-600 rounded-lg cursor-pointer transition-all bg-slate-700/50"
           />
           <span className="ml-3 text-sm font-semibold text-gray-300 group-hover:text-emerald-400 transition-colors">
-            Use Random Formation Selection
+            Chọn Đội Hình Ngẫu Nhiên
           </span>
         </label>
         {useFormations && (
@@ -142,14 +142,14 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
             className="h-5 w-5 text-emerald-500 focus:ring-emerald-500 border-slate-600 rounded-lg cursor-pointer transition-all bg-slate-700/50"
           />
           <span className="ml-3 text-sm font-semibold text-gray-300 group-hover:text-emerald-400 transition-colors">
-            Use Random Config Selection
+            Chọn Yêu Cầu Ngẫu Nhiên
           </span>
         </label>
         {useHandicaps && (
           <div className="mt-3 space-y-3">
             <div>
               <label htmlFor="handicapCount" className="block text-sm font-semibold text-gray-300 mb-2">
-                Number of Configs per Match
+                Số Lượng Yêu Cầu Mỗi Trận Đấu
               </label>
               <select
                 id="handicapCount"
@@ -176,13 +176,13 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
           variant="secondary"
           onClick={onCancel}
         >
-          Cancel
+          Hủy
         </Button>
         <Button
           type="submit"
           variant="primary"
         >
-          {profile ? 'Update Profile' : 'Create Profile'}
+          {profile ? 'Cập Nhật' : 'Tạo Người Chơi'}
         </Button>
       </div>
     </form>

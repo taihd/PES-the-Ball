@@ -42,7 +42,7 @@ export function HomePage() {
   };
 
   const handleDelete = (id: string) => {
-    if (confirm('Are you sure you want to delete this profile?')) {
+    if (confirm('Chắc là xóa chưa?')) {
       deleteProfile(id);
     }
   };
@@ -50,7 +50,7 @@ export function HomePage() {
   const handleGenerateMatch = (profile: Profile) => {
     const result = generateMatch(profile);
     if (!result) {
-      alert('Selected profile has no teams. Please add teams to the profile.');
+      alert('Người chơi đã chọn không có đội bóng nào. Vui lòng thêm đội bóng.');
       return;
     }
     setMatchResult(result);
@@ -78,7 +78,7 @@ export function HomePage() {
       <div className="flex justify-center items-center min-h-[400px]">
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 border-4 border-emerald-500/20 border-t-emerald-400 rounded-full animate-spin shadow-lg shadow-emerald-500/20"></div>
-          <div className="text-gray-400 font-medium">Loading...</div>
+          <div className="text-gray-400 font-medium">Đang tải...</div>
         </div>
       </div>
     );
@@ -88,7 +88,7 @@ export function HomePage() {
     <div className="container mx-auto px-4 py-8 max-w-7xl">
       <div className="flex justify-between items-center mb-8">
         <Button variant="primary" onClick={handleCreate} className="shadow-lg">
-          + Create New Profile
+          + Tạo Người Chơi Mới
         </Button>
       </div>
 
@@ -102,7 +102,7 @@ export function HomePage() {
       <Modal
         isOpen={isModalOpen}
         onClose={handleCancel}
-        title={editingProfile ? 'Edit Profile' : 'Create New Profile'}
+        title={editingProfile ? 'Chỉnh Sửa Cài Đặt' : 'Tạo Người Chơi Mới'}
       >
         <ProfileForm
           profile={editingProfile}
@@ -115,7 +115,7 @@ export function HomePage() {
         <Modal
           isOpen={showMatchResult}
           onClose={handleCloseMatchResult}
-          title="Match Configuration"
+          title="Cài đặt"
         >
           <MatchResult 
             result={matchResult} 
