@@ -1,6 +1,7 @@
 import type { Formation } from '../types';
 
 export const formations: Formation[] = [
+  { id: 'default', name: 'ĐH Mặc định', code: 'default' },
   // 4 at the back
   { id: '4-5-1', name: '4-5-1', code: '4-5-1' },
   { id: '4-4-2', name: '4-4-2', code: '4-4-2' },

@@ -7,9 +7,9 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter basename="/PES-the-Ball">
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col bg-slate-900">
         <Header />
-        <main className="flex-1 bg-transparent">
+        <main className="flex-1">
           <HomePage />
         </main>
         <Footer />
