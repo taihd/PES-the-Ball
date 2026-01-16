@@ -9,10 +9,10 @@ interface MatchResultProps {
 export function MatchResult({ result, onReroll }: MatchResultProps) {
   return (
     <div className="text-center space-y-6">
-      <div>
+      {/* <div>
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Cài Đặt Người Chơi</h2>
         <p className="text-gray-400 text-sm">Vô game!</p>
-      </div>
+      </div> */}
       
       <div className="relative bg-gradient-to-br from-emerald-500/20 via-cyan-500/20 to-emerald-500/20 rounded-2xl p-6 sm:p-8 border border-emerald-400/30 shadow-xl shadow-emerald-500/10 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent"></div>
