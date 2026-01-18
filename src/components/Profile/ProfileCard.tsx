@@ -32,7 +32,7 @@ export function ProfileCard({ profile, onEdit, onDelete, onGenerateMatch }: Prof
           <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-emerald-400/30 text-emerald-400 font-bold text-xs shadow-lg shadow-emerald-500/20">
             {profile.teams.length}
           </span>
-          <span className="font-medium text-gray-300">Đội Bóng</span>
+          <span className="font-medium text-gray-300">Team</span>
         </div>
         {profile.useFormations ? (
           <div className="flex items-center gap-2 text-gray-300">

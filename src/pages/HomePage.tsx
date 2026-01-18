@@ -115,11 +115,11 @@ export function HomePage() {
         <Modal
           isOpen={showMatchResult}
           onClose={handleCloseMatchResult}
-          title="Cài đặt"
+          title={selectedProfileForMatch?.name || "Cài đặt"}
         >
           <MatchResult 
             result={matchResult} 
-            onReroll={handleReroll} 
+            onReroll={handleReroll}
           />
         </Modal>
       )}

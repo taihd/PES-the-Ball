@@ -84,7 +84,10 @@ export function MatchGenerator({ profiles }: MatchGeneratorProps) {
       </div>
 
       {matchResult && (
-        <MatchResult result={matchResult} onReroll={handleReroll} />
+        <MatchResult 
+          result={matchResult} 
+          onReroll={handleReroll}
+        />
       )}
     </div>
   );
