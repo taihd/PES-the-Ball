@@ -21,14 +21,16 @@ export const teams: Team[] = [
   { id: 'brentford', name: 'Brentford', category: ['premier-league', 'average'], type: 'club' },
   { id: 'bournemouth', name: 'Bournemouth', category: ['premier-league', 'average'], type: 'club' },
   { id: 'nottingham', name: 'Nottingham Forest', category: ['premier-league', 'average'], type: 'club' },
+  { id: 'sunderland', name: 'Sunderland', category: ['premier-league', 'average'], type: 'club' },
   
   // Premier League - Weak
   { id: 'burnley', name: 'Burnley', category: ['premier-league', 'weak'], type: 'club' },
-  { id: 'sheffield-utd', name: 'Sheffield United', category: ['premier-league', 'weak'], type: 'club' },
-  { id: 'luton', name: 'Luton Town', category: ['premier-league', 'weak'], type: 'club' },
-  { id: 'ipswich', name: 'Ipswich Town', category: ['premier-league', 'weak'], type: 'club' },
-  { id: 'leicester', name: 'Leicester City', category: ['premier-league', 'weak'], type: 'club' },
-  { id: 'southampton', name: 'Southampton', category: ['premier-league', 'weak'], type: 'club' },
+  { id: 'leeds', name: 'Leeds United', category: ['premier-league', 'weak'], type: 'club' },
+  // { id: 'sheffield-utd', name: 'Sheffield United', category: ['premier-league', 'weak'], type: 'club' },
+  // { id: 'luton', name: 'Luton Town', category: ['premier-league', 'weak'], type: 'club' },
+  // { id: 'ipswich', name: 'Ipswich Town', category: ['premier-league', 'weak'], type: 'club' },
+  // { id: 'leicester', name: 'Leicester City', category: ['premier-league', 'weak'], type: 'club' },
+  // { id: 'southampton', name: 'Southampton', category: ['premier-league', 'weak'], type: 'club' },
   
   // La Liga - Strong
   { id: 'real-madrid', name: 'Real Madrid', category: ['la-liga', 'strong'], type: 'club' },
