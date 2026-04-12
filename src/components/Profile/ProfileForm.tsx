@@ -6,7 +6,6 @@ import { HandicapSelector } from '../Handicap/HandicapSelector';
 import { Button } from '../Shared/Button';
 import { formations } from '../../data/formations';
 import { handicaps } from '../../data/handicaps';
-import { worldCup2026TeamIds } from '../../data/teams';
 
 interface ProfileFormProps {
   profile?: Profile;
@@ -103,19 +102,9 @@ export function ProfileForm({ profile, onSave, onCancel }: ProfileFormProps) {
       </div>
 
       <div>
-        <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-          <label className="block text-sm font-semibold text-gray-300">
-            Đội Bóng
-          </label>
-          <Button
-            type="button"
-            variant="secondary"
-            size="sm"
-            onClick={() => setTeams([...worldCup2026TeamIds])}
-          >
-            Preset: World Cup 2026 (48 đội)
-          </Button>
-        </div>
+        <label className="block text-sm font-semibold text-gray-300 mb-2">
+          Đội Bóng
+        </label>
         <TeamSelector
           selectedTeamIds={teams}
           onSelectionChange={setTeams}
